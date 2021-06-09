@@ -10,7 +10,9 @@ const initializeSimplebar = () => {
   const simplebarElement = document.getElementsByClassName("js-simplebar")[0];
 
   if(simplebarElement){
-    const simplebarInstance = new SimpleBar(document.getElementsByClassName("js-simplebar")[0]);
+    const simplebarInstance = new SimpleBar(document.getElementsByClassName("js-simplebar")[0],{
+      direction: 'rtl',
+    });
 
     /* Recalculate simplebar on sidebar dropdown toggle */
     const sidebarDropdowns = document.querySelectorAll(".js-sidebar [data-bs-parent]");
