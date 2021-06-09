@@ -6,6 +6,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
 const FileManagerPlugin = require("filemanager-webpack-plugin");
+const RtlCssPlugin = require("rtlcss-webpack-plugin");
 
 const opts = {
   rootDir: process.cwd(),
@@ -58,7 +59,8 @@ module.exports = {
       onEnd: {
         copy: [{ source: "./dist/**/*", destination: "./static" }]
       }
-    })
+    }),
+    new RtlCssPlugin('css/app.rtl.css')
   ],
   module: {
     rules: [
